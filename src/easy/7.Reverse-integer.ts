@@ -42,19 +42,22 @@
 
  */
 var reverse = function(x: number) {
-  let reverseNumber = undefined;
+  let reverseNumber = undefined
   if (x > 2147483647 || x < -2147483648) {
-    reverseNumber = 0;
+    reverseNumber = 0
   } else {
-    const isMinus: boolean = x < 0;
-    const absoluteNumber = Math.abs(x);
+    const isMinus: boolean = x < 0
+    const absoluteNumber = Math.abs(x)
     const reverseString = absoluteNumber
       .toString()
       .split("")
       .reverse()
-      .join("");
-    reverseNumber = Number(reverseString) / (isMinus ? -1 : 1);
+      .join("")
+    reverseNumber = Number(reverseString) / (isMinus ? -1 : 1)
   }
-  return reverseNumber;
-};
-export default reverse;
+  if (reverseNumber > 2147483647 || reverseNumber < -2147483648) {
+    reverseNumber = 0
+  }
+  return reverseNumber
+}
+export default reverse
