@@ -41,7 +41,7 @@ var longestCommonPrefix = function(strs: string[]) {
   if (strs.length === 0) {
     return ""
   } else {
-    const findMinStr = (strs: string[]): string => {
+    const minLengthStr = ((strs: string[]): string => {
       let minStr = strs[0]
       let minLength = strs[0].length
       for (let str of strs) {
@@ -51,8 +51,7 @@ var longestCommonPrefix = function(strs: string[]) {
         }
       }
       return minStr
-    }
-    const minLengthStr = findMinStr(strs)
+    })(strs)
     let prefix = ""
     for (let index = 0; index < minLengthStr.length; index++) {
       let isEqual = true
