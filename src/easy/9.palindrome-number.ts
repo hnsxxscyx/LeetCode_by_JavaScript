@@ -42,35 +42,35 @@
  *
  */
 var isPalindrome = function(num: number): boolean {
-  let result = true;
+  let result = true
   if (num < 0) {
-    result = false;
+    result = false
   } else {
     if (num < 10) {
-      result = true;
+      result = true
     } else {
-      const bitList: number[] = [];
+      const bitList: number[] = []
       for (
         let newNumber = num, bit = newNumber % 10;
         newNumber > 0;
         newNumber = Math.floor(newNumber / 10), bit = newNumber % 10
       ) {
-        bitList.push(bit);
+        bitList.push(bit)
       }
-      const numLength = bitList.length;
+      const numLength = bitList.length
       for (
         let startIndex = 0, endIndex = numLength - 1;
         startIndex <= Math.floor(numLength / 2);
         startIndex++, endIndex--
       ) {
         if (bitList[startIndex] !== bitList[endIndex]) {
-          result = false;
-          break;
+          result = false
+          break
         }
       }
     }
   }
-  return result;
-};
-isPalindrome(12321);
-export default isPalindrome;
+  return result
+}
+
+export default isPalindrome
